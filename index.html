@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Dice</title>
+<meta charset="utf-8">
+<style type="text/css">
+	body {
+		font: 14pt Calibri;
+		
+	}
+	
+	h1 {
+		text-align: center;
+	}
+
+	.dice {
+		top: 0;
+		left: 0;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		transform-style: preserve-3d;
+		transition: transform 1s;
+		
+	}
+
+	.dice-container {
+		perspective: 600px;
+		margin: 30px auto;
+		position: relative;
+		height: 200px;
+		width: 200px;
+	}
+
+	/* Navigation */
+	nav {
+		text-align: center;
+	}
+	nav a {
+		text-decoration: none;
+		font-size: 16pt;
+		display: inline-block;
+		margin: 10px;
+	}
+
+	/*strana kostky*/
+	figure {
+		height: 198px;
+		width: 198px;
+		border: 1px solid black;
+		padding: 0px;
+		margin: 0px;
+		background-color: #eef;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0.9;
+	}
+
+
+	/*vzhled tečky*/
+	.dice figure .point{
+		width: 30px;
+		height: 30px;
+		border-radius: 15px;
+		background-color: black;
+		position: absolute;
+	}
+
+
+
+	/*hodně pozicování teček*/
+	.dice .face-1 .point:nth-child(1),
+	.dice .face-3 .point:nth-child(1),
+	.dice .face-5 .point:nth-child(1){
+		top: 85px;
+		left: 85px;
+	}
+
+	.dice .face-2 .point:nth-child(1),
+	.dice .face-3 .point:nth-child(2),
+	.dice .face-4 .point:nth-child(1),
+	.dice .face-5 .point:nth-child(2),
+	.dice .face-6 .point:nth-child(1){
+		top: 40px;
+		left: 40px;
+	}
+
+	.dice .face-2 .point:nth-child(2),
+	.dice .face-3 .point:nth-child(3),
+	.dice .face-4 .point:nth-child(2),
+	.dice .face-5 .point:nth-child(3),
+	.dice .face-6 .point:nth-child(2){
+		bottom: 40px;
+		right: 40px;
+	}
+
+	.dice .face-4 .point:nth-child(3),
+	.dice .face-5 .point:nth-child(4),
+	.dice .face-6 .point:nth-child(3){
+		bottom: 40px;
+		left: 40px;
+	}
+
+	.dice .face-4 .point:nth-child(4),
+	.dice .face-5 .point:nth-child(5),
+	.dice .face-6 .point:nth-child(4){
+		top: 40px;
+		right: 40px;
+	}
+
+	.dice .face-6 .point:nth-child(5){
+		top: 85px;
+		right: 40px;
+	}
+	.dice .face-6 .point:nth-child(6){
+		top: 85px;
+		left: 40px;
+	}
+
+	/*rotace*/
+
+	.dice > figure.face-1 {transform: translateZ(100px);}
+	.dice > figure.face-2 {transform: rotateY(90deg) translateZ(100px);}
+	.dice > figure.face-3 {transform: rotateX(90deg) translateZ(100px);}
+	.dice > figure.face-4 {transform: rotateX(-90deg) translateZ(100px);}
+	.dice > figure.face-5 {transform: rotateY(-90deg) translateZ(100px);}
+	.dice > figure.face-6 {transform: rotateX(180deg) translateZ(100px);}
+
+	.dice{transform: translateZ(-100px);}
+	#show-2:target .dice {transform: translateZ(-100px) rotateY(-90deg);}
+	#show-3:target .dice {transform: translateZ(-100px) rotateX(-90deg);}
+	#show-4:target .dice {transform: translateZ(-100px) rotateX(90deg);}
+	#show-5:target .dice {transform: translateZ(-100px) rotateY(90deg);}
+	#show-6:target .dice {transform: translateZ(-100px) rotateX(180deg);}
+
+
+
+	
+
+
+</style>
+</head>
+
+<body>
+
+<h1>Kostka</h1>
+
+<section class="dice-container">
+<div id="show-1"><div id="show-2"><div id="show-3"><div id="show-4"><div id="show-5"><div id="show-6">
+<div class="dice">
+	<figure class="face-1">
+		<div class="point"></div>
+	</figure>
+	<figure class="face-2">
+		<div class="point"></div>
+		<div class="point"></div>
+	</figure>
+	<figure class="face-3">
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+	</figure>
+	<figure class="face-4">
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+	</figure>
+	<figure class="face-5">
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+	</figure>
+	<figure class="face-6">
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+		<div class="point"></div>
+	</figure>
+</div>
+</div></div></div></div></div></div>
+</section>
+
+<nav>
+	<a href="#show-1">1</a>
+	<a href="#show-2">2</a>
+	<a href="#show-3">3</a>
+	<a href="#show-4">4</a>
+	<a href="#show-5">5</a>
+	<a href="#show-6">6</a>
+</nav>
+
+</body>
+</html>
